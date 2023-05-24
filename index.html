@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./scss/index.css">
+  <title>Interactive pricing component</title>
+
+</head>
+<body>
+  <header>
+    <h1>Simple, traffic-based pricing</h1>
+    <h3>Sign-up for our 30-day trial.</h3>
+    <span>No credit card required.</span>
+    <img src="images/pattern-circles.svg" alt="circles">
+  </header>
+  <main class="content">
+    <div class="pattern-bg" aria-hidden="true"></div>
+    <div class="content-header">
+      <span class="page-views">100K Pageviews</span>
+      <h3 class="price">$<span id="price">16.00</span><span class="small">/ month</span></h3>
+      <div class="range-input">
+        <label for="range-input" aria-hidden="true"></label>
+        <input type="range" min="1" max="32" value="16" class="slider" id="range-input">
+      </div>
+    </div>
+    <div class="content-body">
+      <span class="title-monthly">Monthly Billing</span>
+      <div class="toggle-btn" id="toggle">
+        <div class="circle-toggle" id="circle" aria-hidden="true"></div>
+      </div>
+      <h4>Yearly Billing <span class="badge" id="badge-discount"></span> -25%</h4>
+    </div>
+    <div class="content-footer">
+      <div class="features">
+        <span><img src="images/icon-check.svg" alt="">Unlimited websites</span>
+        <span><img src="images/icon-check.svg" alt="">100% data ownership</span>
+        <span><img src="images/icon-check.svg" alt="">Email reports</span>
+      </div>
+      <button>Start my trial</button>
+    </div>
+  </main>
+  <script src="./js/index.js"></script>
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Fernando de la Torre</a>.
+  </div> -->
+</body>
+</html>

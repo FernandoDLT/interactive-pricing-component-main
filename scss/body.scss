@@ -1,0 +1,176 @@
+@use "./util/mixins" as mix;
+@use "./util/colors" as color;
+
+.content {
+   @include mix.sizeByDefault;
+   background-color: color.$white;
+   margin-top: 3em;
+   padding-top: 2.5em;
+   box-shadow: 0 0 10px rgba(128, 128, 128, 0.1);
+   .content-header {
+      display: grid;
+      .page-views {
+         @include mix.fontFace(800, color.$grayishBlue);
+         display: block;
+         width: 100%;
+         text-align: center;
+         text-transform: uppercase;
+         letter-spacing: 2px;
+         grid-row: 1;
+         grid-column: 1;
+      }
+      .price {
+         @include mix.fontFace(800, color.$darkDesaturatedBlue);
+         width: 100%;
+         text-align: center;
+         font-size: clamp(1.2rem, 10vh, 3rem);
+         grid-column: 1;
+         grid-row: 3;
+         margin: 0.8em 0em;
+         .small {
+            font-size: .8rem;
+            color: color.$grayishBlue;
+         }
+      }
+      .range-input {
+         @include mix.flexCenter(column);
+         flex-flow: column-reverse;
+         grid-column: 1;
+         grid-row: 2;
+         margin-top: 2em;
+         .slider {
+            appearance: none;
+            width: 90%;
+            height: 10px;
+            border-radius: 5px;
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            transition: opacity 0.2s;
+            background-color: color.$softCyan;
+            margin: 1em 0em;
+            &::-moz-range-thumb,
+            &::-webkit-slider-thumb {
+               appearance: none;
+               width: 45px;
+               height: 45px;
+               border: 0;
+               border-radius: 150px;
+               background-color: color.$strongCyan;
+               background-image: url("/images/icon-slider.svg");
+               background-repeat: no-repeat;
+               background-position: center;
+               box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+               cursor: pointer;
+            }
+            &::-webkit-slider-thumb:hover {
+               background-color: color.$grayishBlue;
+            }
+            &::-webkit-slider-thumb:active {
+               cursor: grab;
+               background-color: color.$grayishBlue;
+            }
+         }
+      }
+   }
+   .content-body {
+      @include mix.flexCenter(row);
+      gap: 1em;
+      margin-bottom: 2em;
+      margin-bottom: 1em;
+      .title-monthly, h4 {
+         @include mix.fontFace(800, color.$grayishBlue);
+         font-size: clamp(0.6rem, 1vh, 1.4rem);
+      }
+      .toggle-btn {
+         display: block;
+         width: clamp(20px, 50px, 40px);
+         height: 20px;
+         background-color: color.$veryPaleBlue;
+         position: relative;
+         border-radius: 150px;
+         cursor: pointer;
+         .circle-toggle {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            width: 14px;
+            height: 14px;
+            background-color: color.$white;
+            transform: translate(10%, -50%);
+            border-radius: 150px;
+            transition: 0.2s ease-in-out;
+         }
+      }
+      h4 .badge {
+         background-color: color.$grayishBlue;
+         color: color.$lightRed;
+         margin-left: 0.5rem;
+         border-radius: 150px;
+         padding: 0em 1em;
+      }
+   }
+   .content-footer {
+      @include mix.flexCenter(column);
+      border-top: 1px solid color.$lightGrayishBlue;
+      padding: 2em 0em;
+      gap: 2.5em;
+      .features {
+         @include mix.flexCenter(column);
+         gap: 1em;
+         span {
+            @include mix.fontFace(600, color.$grayishBlue);
+            display: flex;
+            align-items: center;
+            gap: 1em;
+         }
+      }
+      button {
+         @include mix.fontFace(600, color.$white);
+         display: block;
+         width: 70%;
+         max-width: 250px;
+         background-color: color.$darkDesaturatedBlue;
+         padding: 1.5em;
+         border-radius: 150px;
+         border: none;
+         margin: 1.5em 0em;
+         cursor: pointer;
+         &:active {
+            transform: scale(0.9);
+         }
+      }
+   }
+}
+
+@media (min-width: 900px) {
+   .content .content-header {
+      grid-template-columns: 50% 50%;
+      grid-template-rows: 50% 50%;
+      .page-views, .price {
+         @include mix.flexCenter(row);
+         }
+         .page-views {
+            grid-column: 1;
+            grid-row: 1;
+         }
+         .price {
+            grid-column: 2;
+            grid-row: 1;
+         }
+         .range-input {
+            grid-row: 2;
+            grid-column: 1/3;
+            margin-top: 0;
+         }
+   }
+      .content .content-footer {
+         flex-direction: row;
+         .features button {
+            width: 50%;
+         }
+         .features {
+            align-items: flex-start;
+      }
+   }
+}

@@ -1,0 +1,18 @@
+@mixin sizeByDefault {
+   width: 90%;
+   max-width: 700px;
+   margin: auto;
+}
+
+@mixin fontFace($weight, $color) {
+   font-family: "Manrope", sans-serif;
+   font-weight: $weight;
+   color: $color;
+}
+
+@mixin flexCenter($direction) {
+   display: flex;
+   flex-direction: $direction;
+   align-items: center;
+   justify-content: center;
+}

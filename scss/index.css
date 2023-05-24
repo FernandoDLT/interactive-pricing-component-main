@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  background-color: hsl(230, 100%, 99%);
+  min-height: 100vh;
+}
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background: white;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #d7d7df;
+  border-radius: 20px;
+}
+
+.pattern-bg {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50vh;
+  background-image: url("/images/bg-pattern.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+header {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  padding: 4em;
+  position: relative;
+  z-index: 3;
+}
+header h1 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: hsl(227, 35%, 25%);
+  font-size: clamp(1rem, 6vh, 2.5rem);
+  margin: 0;
+}
+header h2, header span {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: hsl(225, 20%, 60%);
+  font-size: clamp(0.8rem, 2vh, 1.3rem);
+}
+header img {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1;
+}
+
+@media (min-width: 900px) {
+  h2, span {
+    display: inline-block;
+  }
+}
+.content {
+  width: 90%;
+  max-width: 700px;
+  margin: auto;
+  background-color: hsl 0, 0%, 100%;
+  margin-top: 3em;
+  padding-top: 2.5em;
+  box-shadow: 0 0 10px rgba(128, 128, 128, 0.1);
+}
+.content .content-header {
+  display: grid;
+}
+.content .content-header .page-views {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: hsl(225, 20%, 60%);
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  grid-row: 1;
+  grid-column: 1;
+}
+.content .content-header .price {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: hsl(227, 35%, 25%);
+  width: 100%;
+  text-align: center;
+  font-size: clamp(1.2rem, 10vh, 3rem);
+  grid-column: 1;
+  grid-row: 3;
+  margin: 0.8em 0em;
+}
+.content .content-header .price .small {
+  font-size: 0.8rem;
+  color: hsl(225, 20%, 60%);
+}
+.content .content-header .range-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column-reverse;
+  grid-column: 1;
+  grid-row: 2;
+  margin-top: 2em;
+}
+.content .content-header .range-input .slider {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 90%;
+  height: 10px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  background-color: hsl(174, 77%, 80%);
+  margin: 1em 0em;
+}
+.content .content-header .range-input .slider::-moz-range-thumb, .content .content-header .range-input .slider::-webkit-slider-thumb {
+  -moz-appearance: none;
+       appearance: none;
+  width: 45px;
+  height: 45px;
+  border: 0;
+  border-radius: 150px;
+  background-color: hsl(174, 86%, 45%);
+  background-image: url("/images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.content .content-header .range-input .slider::-webkit-slider-thumb:hover {
+  background-color: hsl(225, 20%, 60%);
+}
+.content .content-header .range-input .slider::-webkit-slider-thumb:active {
+  cursor: grab;
+  background-color: hsl(225, 20%, 60%);
+}
+.content .content-body {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  margin-bottom: 2em;
+  margin-bottom: 1em;
+}
+.content .content-body .title-monthly, .content .content-body h4 {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  color: hsl(225, 20%, 60%);
+  font-size: clamp(0.6rem, 1vh, 1.4rem);
+}
+.content .content-body .toggle-btn {
+  display: block;
+  width: 40px;
+  height: 20px;
+  background-color: hsl(230, 100%, 99%);
+  position: relative;
+  border-radius: 150px;
+  cursor: pointer;
+}
+.content .content-body .toggle-btn .circle-toggle {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  width: 14px;
+  height: 14px;
+  background-color: hsl 0, 0%, 100%;
+  transform: translate(10%, -50%);
+  border-radius: 150px;
+  transition: 0.2s ease-in-out;
+}
+.content .content-body h4 .badge {
+  background-color: hsl(225, 20%, 60%);
+  color: hsl(15, 100%, 70%);
+  margin-left: 0.5rem;
+  border-radius: 150px;
+  padding: 0em 1em;
+}
+.content .content-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid hsl(223, 50%, 87%);
+  padding: 2em 0em;
+  gap: 2.5em;
+}
+.content .content-footer .features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.content .content-footer .features span {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: hsl(225, 20%, 60%);
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.content .content-footer button {
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: hsl 0, 0%, 100%;
+  display: block;
+  width: 70%;
+  max-width: 250px;
+  background-color: hsl(227, 35%, 25%);
+  padding: 1.5em;
+  border-radius: 150px;
+  border: none;
+  margin: 1.5em 0em;
+  cursor: pointer;
+}
+.content .content-footer button:active {
+  transform: scale(0.9);
+}
+
+@media (min-width: 900px) {
+  .content .content-header {
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+  }
+  .content .content-header .page-views, .content .content-header .price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .content .content-header .page-views {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .content .content-header .price {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .content .content-header .range-input {
+    grid-row: 2;
+    grid-column: 1/3;
+    margin-top: 0;
+  }
+  .content .content-footer {
+    flex-direction: row;
+  }
+  .content .content-footer .features button {
+    width: 50%;
+  }
+  .content .content-footer .features {
+    align-items: flex-start;
+  }
+}/*# sourceMappingURL=index.css.map */
