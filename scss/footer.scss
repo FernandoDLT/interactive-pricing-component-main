@@ -1,13 +1,15 @@
-@use "./util/colors" as colors;
+@use "./util/colors" as color;
 @use "./util/mixins" as mix;
 
 footer {
    display: block;
+   font-size: 8px;
    text-align: center;
    @include mix.fontFace(600, color.$strongCyan);
    padding: 1.5em 0em;
    a {
-      color: color.$darkDesaturatedBlue;
+      font-size: 8px;
+      color: color.$grayishBlue;
       text-decoration: none;
    }
 }

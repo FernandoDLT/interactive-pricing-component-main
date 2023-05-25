@@ -1,4 +1,14 @@
 footer {
   display: block;
+  font-size: 8px;
   text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  color: hsl(174, 86%, 45%);
+  padding: 1.5em 0em;
+}
+footer a {
+  font-size: 8px;
+  color: hsl(225, 20%, 60%);
+  text-decoration: none;
 }/*# sourceMappingURL=footer.css.map */
